@@ -1,8 +1,13 @@
-var assert = require('chai').assert;
-var routes = require('../routes');
+var request = require('supertest')
+  , express = require('express');
+
+var app = express();
 
 describe('Home page', function() {
-     it("displays welcome")
+  it("renders successfully", function(done) {
+    console.log('========= hey!');
+    request(app).get('/').expect(200, done);    
+  })
 })
 
 
